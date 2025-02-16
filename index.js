@@ -8,16 +8,11 @@ let homePoints = 0;
 let guestPoints = 0;
 
 
-
-
-
 // Render current point to DOM
 homePointsEl.textContent = homePoints;
 guestPointsEl.textContent = guestPoints;
 
-
-
-
+// receives team and points and increases depending on team and initiates highlightLeader()
 function updateScore(team, points) {
   if (team === "home") {
     homePoints += points;
@@ -30,6 +25,7 @@ function updateScore(team, points) {
   }
 }
 
+// changes the color of leading team 
 function highlightLeader(){
     if (homePoints > guestPoints) {
         homeHeader.style.color = 'yellow';
@@ -41,6 +37,7 @@ function highlightLeader(){
     }
 }
 
+// makes container clickable and captures which button and how many points was clicked, initiates updateScore()
 const containerEl = document.getElementsByClassName("container")[0];
 containerEl.addEventListener("click", (event) => {
   console.log(event.target.tagName);
@@ -53,6 +50,7 @@ containerEl.addEventListener("click", (event) => {
   }
 });
 
+// m
 const newGameBtn = document.getElementById("new-game");
 newGameBtn.addEventListener("click", () => {
   homePoints = 0;
@@ -60,10 +58,3 @@ newGameBtn.addEventListener("click", () => {
   homePointsEl.textContent = homePoints;
   guestPointsEl.textContent = guestPoints;
 });
-
-/**BONUS
- * Add a "New Game" button
- * Highlight the leader
- * aAdd a few more counters
- * Change the design
- */
