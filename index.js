@@ -50,7 +50,7 @@ containerEl.addEventListener("click", (event) => {
   }
 });
 
-// m
+// adds functionality to New Game button, clearing both teams points
 const newGameBtn = document.getElementById("new-game");
 newGameBtn.addEventListener("click", () => {
   homePoints = 0;
