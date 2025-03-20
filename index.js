@@ -44,8 +44,8 @@ containerEl.addEventListener("click", (event) => {
 
   if (event.target.tagName === "BUTTON") {
     let points = parseInt(event.target.textContent);
-    let team = event.target.parentElement.classList[0];
-    console.log(event.target.textContent);
+    let team = event.target.parentElement.parentElement.className;
+    console.log(event.target.textContent, team);
     updateScore(team, points);
   }
 });
